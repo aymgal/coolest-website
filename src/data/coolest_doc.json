@@ -1,0 +1,649 @@
+{
+  "coordinates_origin": {
+    "dec": "-08d45m51.48s",
+    "documentation": "Defines the origine of the coordinate system, in RA-Dec.",
+    "ra": "00h11m20.244s"
+  },
+  "cosmology": {
+    "H0": 70.0,
+    "Om0": 0.3,
+    "astropy_name": "FlatLambdaCDM"
+  },
+  "instrument": {
+    "band": "F160W",
+    "name": "ex: HST/WFC3",
+    "pixel_size": 0.08,
+    "psf": [
+      {
+        "description": null,
+        "pixels": null,
+        "type": "PixelatedPSF"
+      },
+      {
+        "description": null,
+        "std_dev": 0.0,
+        "type": "GaussianPSF"
+      }
+    ],
+    "readout_noise": null
+  },
+  "lensing_entities": [
+    {
+      "light_model": [
+        {
+          "documentation": "Elliptical Sersic",
+          "parameters": {
+            "A": {
+              "documentation": "Amplitude at origin",
+              "latex_str": "$A$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "R_sersic": {
+              "documentation": "Sersic radius",
+              "latex_str": "$R_{\\rm Sersic}$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_x": {
+              "documentation": "Profile center along x coordinates",
+              "latex_str": "$x_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_y": {
+              "documentation": "Profile center along y coordinates",
+              "latex_str": "$y_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "n_sersic": {
+              "documentation": "Sersic index",
+              "latex_str": "$n_{\\rm Sersic}$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi": {
+              "documentation": "Position angle",
+              "latex_str": "$\\phi$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "q": {
+              "documentation": "Axis ratio, semi-minor axis / semi-major axis",
+              "latex_str": "$q$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "Sersic"
+        },
+        {
+          "documentation": "Chameleon profile defined as the difference between two NIE profiles (elliptical truncated double isothermal profile)",
+          "parameters": {
+            "A": {
+              "documentation": "Central amplitude",
+              "latex_str": "$A$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_x": {
+              "documentation": "Profile center along x coordinates",
+              "latex_str": "$x_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_y": {
+              "documentation": "Profile center along y coordinates",
+              "latex_str": "$y_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi": {
+              "documentation": "Position angle",
+              "latex_str": "$\\phi$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "q": {
+              "documentation": "Axis ratio, semi-minor axis / semi-major axis",
+              "latex_str": "$q$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "w_c": {
+              "documentation": "Core radius of inner NIE",
+              "latex_str": "$w{\\rm c}$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "w_t": {
+              "documentation": "Core radius of outer NIE",
+              "latex_str": "$w{\\rm t}$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "Chameleon"
+        },
+        {
+          "documentation": "Uniform sheet of light",
+          "parameters": {
+            "A": {
+              "documentation": "Central amplitude",
+              "latex_str": "$A$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "Uniform"
+        },
+        {
+          "documentation": "Set of shapelet functions",
+          "parameters": {
+            "amps": {
+              "documentation": "Set of amplitude values for each shapelet function",
+              "latex_str": "$A$",
+              "num_values": 0,
+              "point_estimate": {
+                "value": []
+              }
+            },
+            "beta": {
+              "documentation": "Shapelet characteristic scale",
+              "latex_str": "$\\beta$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_x": {
+              "documentation": "Shapelets center along x coordinates",
+              "latex_str": "$x_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_y": {
+              "documentation": "Shapelets center along y coordinates",
+              "latex_str": "$y_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "n_max": {
+              "documentation": "Maximum order of the Shapelet decomposition",
+              "latex_str": "$\\n_{\\rm max}$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "Shapelets"
+        },
+        {
+          "documentation": "Set of lensed point sources",
+          "parameters": {
+            "amps": {
+              "documentation": "Set of amplitude values for the lensed point sources",
+              "latex_str": "$A$",
+              "num_values": 0,
+              "point_estimate": {
+                "value": []
+              }
+            },
+            "dec_list": {
+              "documentation": "DEC positions of the lensed point sources",
+              "latex_str": "$dec$",
+              "num_values": 0,
+              "point_estimate": {
+                "value": []
+              }
+            },
+            "ra_list": {
+              "documentation": "RA positions of the lensed point sources",
+              "latex_str": "$ra$",
+              "num_values": 0,
+              "point_estimate": {
+                "value": []
+              }
+            }
+          },
+          "type": "LensedPS"
+        },
+        {
+          "documentation": "A pixelated profile defined on a regular Cartesian grid",
+          "pixels": {
+            "documentation": "Pixel values",
+            "field_of_view_x": [
+              null,
+              null
+            ],
+            "field_of_view_y": [
+              null,
+              null
+            ],
+            "fits_file": "None",
+            "num_pix_x": null,
+            "num_pix_y": null
+          },
+          "type": "PixelatedRegularGrid"
+        }
+      ],
+      "mass_model": [
+        {
+          "documentation": "Singular isothermal sphere",
+          "parameters": {
+            "center_x": {
+              "documentation": "Profile center along x coordinates",
+              "latex_str": "$x_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_y": {
+              "documentation": "Profile center along y coordinates",
+              "latex_str": "$y_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi": {
+              "documentation": "Position angle",
+              "latex_str": "$\\phi$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "q": {
+              "documentation": "Axis ratio, semi-minor axis / semi-major axis",
+              "latex_str": "$q$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "theta_E": {
+              "documentation": "Einstein radius",
+              "latex_str": "$\\theta_{\\rm E}$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "SIE"
+        },
+        {
+          "documentation": "Non-singular isothermal sphere",
+          "parameters": {
+            "center_x": {
+              "documentation": "Profile center along x coordinates",
+              "latex_str": "$x_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_y": {
+              "documentation": "Profile center along y coordinates",
+              "latex_str": "$y_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi": {
+              "documentation": "Position angle",
+              "latex_str": "$\\phi$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "q": {
+              "documentation": "Axis ratio, semi-minor axis / semi-major axis",
+              "latex_str": "$q$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "r_core": {
+              "documentation": "Core radius",
+              "latex_str": "$r_{\\rm c}$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "theta_E": {
+              "documentation": "Einstein radius",
+              "latex_str": "$\\theta_{\\rm E}$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "NIE"
+        },
+        {
+          "documentation": "Powerlaw elliptical mass distribution",
+          "parameters": {
+            "center_x": {
+              "documentation": "Profile center along x coordinates",
+              "latex_str": "$x_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_y": {
+              "documentation": "Profile center along y coordinates",
+              "latex_str": "$y_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "gamma": {
+              "documentation": "Mass density slope at Einstein radius",
+              "latex_str": "$\\gamma$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi": {
+              "documentation": "Position angle",
+              "latex_str": "$\\phi$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "q": {
+              "documentation": "Axis ratio, semi-minor axis / semi-major axis",
+              "latex_str": "$q$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "theta_E": {
+              "documentation": "Einstein radius",
+              "latex_str": "$\\theta_{\\rm E}$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "PEMD"
+        },
+        {
+          "documentation": "Softened powerlaw elliptical mass distribution",
+          "parameters": {
+            "center_x": {
+              "documentation": "Profile center along x coordinates",
+              "latex_str": "$x_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_y": {
+              "documentation": "Profile center along y coordinates",
+              "latex_str": "$y_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "gamma": {
+              "documentation": "Mass density slope at Einstein radius",
+              "latex_str": "$\\gamma$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi": {
+              "documentation": "Position angle",
+              "latex_str": "$\\phi$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "q": {
+              "documentation": "Axis ratio, semi-minor axis / semi-major axis",
+              "latex_str": "$q$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "r_core": {
+              "documentation": "Core radius",
+              "latex_str": "$r_{\\rm c}$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "theta_E": {
+              "documentation": "Einstein radius",
+              "latex_str": "$\\theta_{\\rm E}$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "SPEMD"
+        },
+        {
+          "documentation": "NFW with ellipticity introduced in the mass",
+          "parameters": {
+            "center_x": {
+              "documentation": "Profile center along x coordinates",
+              "latex_str": "$x_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_y": {
+              "documentation": "Profile center along y coordinates",
+              "latex_str": "$y_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi": {
+              "documentation": "Position angle",
+              "latex_str": "$\\phi$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "q": {
+              "documentation": "Axis ratio, semi-minor axis / semi-major axis",
+              "latex_str": "$q$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "r_s": {
+              "documentation": "Radius at which the mass density profile slope transitions from -1 to -3",
+              "latex_str": "$r_{\\rm s}$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "rho_0": {
+              "documentation": "Characteristic mass density",
+              "latex_str": "$\\rho_0$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "NFW"
+        },
+        {
+          "documentation": "Chameleon profile defined as the difference between two NIE profiles (elliptical truncated double isothermal profile)",
+          "parameters": {
+            "alpha_1": {
+              "documentation": "Deflection angle at 1 (in coordinates units) from the center",
+              "latex_str": "$\\alpha_1$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_x": {
+              "documentation": "Profile center along x coordinates",
+              "latex_str": "$x_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "center_y": {
+              "documentation": "Profile center along y coordinates",
+              "latex_str": "$y_0$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi": {
+              "documentation": "Position angle",
+              "latex_str": "$\\phi$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "q": {
+              "documentation": "Axis ratio, semi-minor axis / semi-major axis",
+              "latex_str": "$q$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "w_c": {
+              "documentation": "Core radius of inner NIE",
+              "latex_str": "$w{\\rm c}$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "w_t": {
+              "documentation": "Core radius of outer NIE",
+              "latex_str": "$w{\\rm t}$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "Chameleon"
+        },
+        {
+          "documentation": "External shear defined with a strength and orientation",
+          "parameters": {
+            "gamma_ext": {
+              "documentation": "Strength of external shear",
+              "latex_str": "$\\gamma_{\\rm ext}$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi_ext": {
+              "documentation": "Orientation of external shear",
+              "latex_str": "$\\phi_{\\rm ext}$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "ExternalShear"
+        },
+        {
+          "documentation": "A pixelated profile defined on a regular Cartesian grid",
+          "pixels": {
+            "documentation": "Pixel values",
+            "field_of_view_x": [
+              null,
+              null
+            ],
+            "field_of_view_y": [
+              null,
+              null
+            ],
+            "fits_file": "None",
+            "num_pix_x": null,
+            "num_pix_y": null
+          },
+          "type": "PixelatedRegularGridPotential"
+        }
+      ],
+      "name": "ex: M51",
+      "redshift": null,
+      "type": "galaxy"
+    },
+    {
+      "mass_model": [
+        {
+          "documentation": "External shear defined with a strength and orientation",
+          "parameters": {
+            "gamma_ext": {
+              "documentation": "Strength of external shear",
+              "latex_str": "$\\gamma_{\\rm ext}$",
+              "point_estimate": {
+                "value": null
+              }
+            },
+            "phi_ext": {
+              "documentation": "Orientation of external shear",
+              "latex_str": "$\\phi_{\\rm ext}$",
+              "point_estimate": {
+                "value": null
+              }
+            }
+          },
+          "type": "ExternalShear"
+        }
+      ],
+      "name": "ex: main perturbers",
+      "redshift": null,
+      "type": "external_shear"
+    }
+  ],
+  "likelihoods": null,
+  "meta": {},
+  "mode": "DOC",
+  "observation": {
+    "exposure_time": null,
+    "mag_sky_brightness": null,
+    "mag_zero_point": null,
+    "noise": [
+      {
+        "std_dev": 0.0,
+        "type": "UniformGaussianNoise"
+      },
+      {
+        "noise_map": null,
+        "type": "NoiseMap"
+      },
+      {
+        "noise_realization": null,
+        "type": "NoiseRealization"
+      },
+      {
+        "type": "InstrumentalNoise",
+        "with_readout_noise": true,
+        "with_sky_shot_noise": true,
+        "with_target_shot_noise": true
+      },
+      {
+        "background_rms": 0.0,
+        "type": "DrizzledNoise",
+        "wht_map": null
+      }
+    ],
+    "pixels": "test_image.fits"
+  },
+  "standard": "COOLEST"
+}
