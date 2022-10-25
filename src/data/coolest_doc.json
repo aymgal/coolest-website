@@ -1,48 +1,46 @@
 {
   "coordinates_origin": {
-    "dec": "-08d45m51.48s",
-    "documentation": "Defines the origine of the coordinate system, in RA-Dec.",
-    "ra": "00h11m20.244s"
+    "dec": "+00d00m00s",
+    "documentation": "Defines the origin of the coordinate system, given in RA-Dec.\n    That origin is then assumed to lie at the center of a data pixel.",
+    "ra": "00h00m00s"
   },
   "cosmology": {
     "H0": 70.0,
     "Om0": 0.3,
-    "astropy_name": "FlatLambdaCDM"
+    "astropy_name": "FlatLambdaCDM",
+    "documentation": "Defines the cosmological model. \n    Currently, only FlatLambdaCDM from astropy is supported, based on H0 and Omega_m."
   },
   "instrument": {
     "band": "F160W",
-    "name": "ex: HST/WFC3",
+    "documentation": "Defines the instrument used for the observation.\n    This includes the name of the telescope and detector, the filter, \n    the pixel size, the readout noise and the point spread function (PSF).",
+    "name": "HST/WFC3",
     "pixel_size": 0.08,
     "psf": [
       {
         "description": null,
+        "documentation": "",
         "pixels": null,
         "type": "PixelatedPSF"
       },
       {
         "description": null,
+        "documentation": "",
         "std_dev": 0.0,
         "type": "GaussianPSF"
       }
     ],
-    "readout_noise": null
+    "readout_noise": 4
   },
   "lensing_entities": [
     {
+      "documentation": "",
       "light_model": [
         {
           "documentation": "Elliptical Sersic",
           "parameters": {
-            "A": {
-              "documentation": "Amplitude at origin",
-              "latex_str": "$A$",
-              "point_estimate": {
-                "value": null
-              }
-            },
-            "R_sersic": {
-              "documentation": "Sersic radius",
-              "latex_str": "$R_{\\rm Sersic}$",
+            "I_eff": {
+              "documentation": "Amplitude at the Sersic radius",
+              "latex_str": "$I_{\\rm Sersic}$",
               "point_estimate": {
                 "value": null
               }
@@ -61,7 +59,7 @@
                 "value": null
               }
             },
-            "n_sersic": {
+            "n": {
               "documentation": "Sersic index",
               "latex_str": "$n_{\\rm Sersic}$",
               "point_estimate": {
@@ -81,6 +79,13 @@
               "point_estimate": {
                 "value": null
               }
+            },
+            "theta_eff": {
+              "documentation": "Sersic (half-light) radius",
+              "latex_str": "$R_{\\rm Sersic}$",
+              "point_estimate": {
+                "value": null
+              }
             }
           },
           "type": "Sersic"
@@ -89,7 +94,7 @@
           "documentation": "Chameleon profile defined as the difference between two NIE profiles (elliptical truncated double isothermal profile)",
           "parameters": {
             "A": {
-              "documentation": "Central amplitude",
+              "documentation": "Normalization of the profile",
               "latex_str": "$A$",
               "point_estimate": {
                 "value": null
@@ -488,8 +493,8 @@
         {
           "documentation": "Chameleon profile defined as the difference between two NIE profiles (elliptical truncated double isothermal profile)",
           "parameters": {
-            "alpha_1": {
-              "documentation": "Deflection angle at 1 (in coordinates units) from the center",
+            "b": {
+              "documentation": "Normalization of the profile",
               "latex_str": "$\\alpha_1$",
               "point_estimate": {
                 "value": null
@@ -523,14 +528,14 @@
                 "value": null
               }
             },
-            "w_c": {
+            "s_c": {
               "documentation": "Core radius of inner NIE",
               "latex_str": "$w{\\rm c}$",
               "point_estimate": {
                 "value": null
               }
             },
-            "w_t": {
+            "s_t": {
               "documentation": "Core radius of outer NIE",
               "latex_str": "$w{\\rm t}$",
               "point_estimate": {
@@ -579,11 +584,12 @@
           "type": "PixelatedRegularGridPotential"
         }
       ],
-      "name": "ex: M51",
+      "name": "M51",
       "redshift": null,
       "type": "galaxy"
     },
     {
+      "documentation": "",
       "mass_model": [
         {
           "documentation": "External shear defined with a strength and orientation",
@@ -606,32 +612,36 @@
           "type": "ExternalShear"
         }
       ],
-      "name": "ex: main perturbers",
+      "name": "main perturbers",
       "redshift": null,
       "type": "external_shear"
     }
   ],
-  "likelihoods": null,
   "meta": {},
   "mode": "DOC",
   "observation": {
+    "documentation": "Defines the observation itself, that is the image pixels, the exposure time,\n    the noise model and/or properties, the magnitude zero-point and sky brightness.",
     "exposure_time": null,
     "mag_sky_brightness": null,
     "mag_zero_point": null,
     "noise": [
       {
+        "documentation": "Uniform gaussian noise given a standard deviation, with 0 mean",
         "std_dev": 0.0,
         "type": "UniformGaussianNoise"
       },
       {
+        "documentation": "Noise characterized by a noise map, which contains diagonal elements of the data covariance matrix",
         "noise_map": null,
         "type": "NoiseMap"
       },
       {
+        "documentation": "Fixed realization of the noise",
         "noise_realization": null,
         "type": "NoiseRealization"
       },
       {
+        "documentation": "The noise properties will be computed directly based \n    on the Instrument (i.e. readout noise) and Observation (e.g. exposure time, sky brightness, etc.)",
         "type": "InstrumentalNoise",
         "with_readout_noise": true,
         "with_sky_shot_noise": true,
@@ -639,6 +649,7 @@
       },
       {
         "background_rms": 0.0,
+        "documentation": "Provide an exposure map (.wht extension) as output by e.g. astrodrizzle, typically for HST images",
         "type": "DrizzledNoise",
         "wht_map": null
       }

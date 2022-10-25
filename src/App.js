@@ -18,6 +18,7 @@ function App() {
   return (
     <div className="container mt-3">
       <h2>The COOLEST template file</h2>
+      <p>The following list gives all the root-level items of a COOLEST template file (JSON format).</p>
       <div className="mt-3">
         <RootAccordion data={data} />
       </div>
