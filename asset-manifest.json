@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/coolest-website/static/js/main.a553fdca.js",
+    "main.js": "/coolest-website/static/js/main.a5b15cf5.js",
     "index.html": "/coolest-website/index.html",
-    "main.a553fdca.js.map": "/coolest-website/static/js/main.a553fdca.js.map"
+    "main.a5b15cf5.js.map": "/coolest-website/static/js/main.a5b15cf5.js.map"
   },
   "entrypoints": [
-    "static/js/main.a553fdca.js"
+    "static/js/main.a5b15cf5.js"
   ]
 }
